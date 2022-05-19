@@ -1,0 +1,853 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.10.4 on win32)" generated="20220518 23:23:05.182" rpa="false" schemaversion="3">
+<suite id="s1" name="Login Sandata" source="C:\Users\calib\Documents\Sandata\PycharmProjects\sandata-mobile-connect\test_suite\e2e\login_sandata.robot">
+<test id="s1-t1" name="To Validate Login Functionality in Sandata Android Application" line="7">
+<kw name="To Validate Login Sandata" library="key_login">
+<kw name="LaunchApp" library="key_login">
+<kw name="OpenSandataApp" library="core">
+<kw name="Open Application" library="AppiumLibrary">
+<arg>${port}</arg>
+<arg>platformName=${platform}</arg>
+<arg>deviceName=${device}</arg>
+<arg>appPackage=${appPackage}</arg>
+<arg>appActivity=${appActivity}</arg>
+<arg>platformVersion=9</arg>
+<arg>automationName=Appium</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<status status="PASS" starttime="20220518 23:23:13.487" endtime="20220518 23:23:27.697"/>
+</kw>
+<status status="PASS" starttime="20220518 23:23:13.487" endtime="20220518 23:23:27.697"/>
+</kw>
+<kw name="Sandata Logo Splash or Not" library="login_ui_component">
+<kw name="Add to image path" library="login_ui_component">
+<kw name="Add Image Path" library="SikuliLibrary">
+<arg>${imagePath}</arg>
+<doc>Add image path</doc>
+<status status="PASS" starttime="20220518 23:23:27.700" endtime="20220518 23:23:27.755"/>
+</kw>
+<status status="PASS" starttime="20220518 23:23:27.698" endtime="20220518 23:23:27.756"/>
+</kw>
+<kw name="Wait Until Screen Contain" library="SikuliLibrary">
+<arg>sandata_splash_screen.png</arg>
+<arg>10</arg>
+<doc>Wait until screen contain
+ Wait until image shown in screen</doc>
+<msg timestamp="20220518 23:23:29.727" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1652896409578.png'/&gt;</msg>
+<status status="PASS" starttime="20220518 23:23:27.757" endtime="20220518 23:23:29.728"/>
+</kw>
+<kw name="Screen Should Contain" library="SikuliLibrary">
+<arg>sandata_splash_screen.png</arg>
+<doc>Screen should contain</doc>
+<msg timestamp="20220518 23:23:31.075" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1652896410948.png'/&gt;</msg>
+<status status="PASS" starttime="20220518 23:23:29.728" endtime="20220518 23:23:31.075"/>
+</kw>
+<status status="PASS" starttime="20220518 23:23:27.698" endtime="20220518 23:23:31.076"/>
+</kw>
+<status status="PASS" starttime="20220518 23:23:13.486" endtime="20220518 23:23:31.076"/>
+</kw>
+<kw name="Location Allow Popup or Not" library="login_ui_component">
+<kw name="Wait Until Screen Contain" library="SikuliLibrary">
+<arg>location_access_splash_screen.png</arg>
+<arg>35</arg>
+<doc>Wait until screen contain
+ Wait until image shown in screen</doc>
+<msg timestamp="20220518 23:23:31.843" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1652896411776.png'/&gt;</msg>
+<status status="PASS" starttime="20220518 23:23:31.078" endtime="20220518 23:23:31.844"/>
+</kw>
+<kw name="Exists" library="SikuliLibrary">
+<arg>location_access_splash_screen.png</arg>
+<doc>Exists</doc>
+<status status="PASS" starttime="20220518 23:23:31.844" endtime="20220518 23:23:32.561"/>
+</kw>
+<status status="PASS" starttime="20220518 23:23:31.077" endtime="20220518 23:23:32.561"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${locationAllow}</arg>
+<arg>30s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20220518 23:23:32.562" endtime="20220518 23:23:33.464"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${locationAllow}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220518 23:23:33.474" level="INFO">Clicking element '//android.widget.Button[@text="ALLOW"]'.</msg>
+<status status="PASS" starttime="20220518 23:23:33.464" endtime="20220518 23:23:33.657"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${companyid}</arg>
+<arg>10s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20220518 23:23:33.658" endtime="20220518 23:23:33.951"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${companyid}</arg>
+<arg>${companyId_data}[0]</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220518 23:23:33.959" level="INFO">Typing text '2-10011' into text field '//android.widget.EditText[@resource-id='inputCompId']'</msg>
+<status status="PASS" starttime="20220518 23:23:33.951" endtime="20220518 23:23:35.726"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${userName}</arg>
+<arg>${username_data}[0]</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220518 23:23:35.734" level="INFO">Typing text 'krishankumar.mohan@mailinator.com' into text field '//android.widget.EditText[@resource-id='inputUserName']'</msg>
+<status status="PASS" starttime="20220518 23:23:35.726" endtime="20220518 23:23:36.652"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${password}</arg>
+<arg>${password_data}[0]</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220518 23:23:36.660" level="INFO">Typing text 'Sandatacalibraint&amp;789' into text field '//android.widget.EditText[@resource-id='inputPassword']'</msg>
+<status status="PASS" starttime="20220518 23:23:36.653" endtime="20220518 23:23:37.594"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${LoginIn}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220518 23:23:37.603" level="INFO">Clicking element '//android.widget.Button[@text="LOG IN"]'.</msg>
+<status status="PASS" starttime="20220518 23:23:37.594" endtime="20220518 23:23:38.998"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${callAllow}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20220518 23:23:38.999" endtime="20220518 23:23:40.334"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${callAllow}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220518 23:23:40.341" level="INFO">Clicking element '//android.widget.Button[@text="ALLOW"]'.</msg>
+<status status="PASS" starttime="20220518 23:23:40.334" endtime="20220518 23:23:40.432"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${enableFingerprint}</arg>
+<arg>15s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20220518 23:23:40.432" endtime="20220518 23:23:43.132"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${enableFingerprint}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220518 23:23:43.141" level="INFO">Clicking element '//android.widget.Button[@text="no"]'.</msg>
+<status status="PASS" starttime="20220518 23:23:43.133" endtime="20220518 23:23:43.359"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${passwordExpire}</arg>
+<arg>15s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20220518 23:23:43.359" endtime="20220518 23:23:50.315"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${passwordExpire}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220518 23:23:50.324" level="INFO">Clicking element '//android.widget.Button[@text="continue"]'.</msg>
+<status status="PASS" starttime="20220518 23:23:50.316" endtime="20220518 23:23:50.515"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220518 23:23:55.526" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220518 23:23:50.516" endtime="20220518 23:23:55.527"/>
+</kw>
+<kw name="Navigate Login page to Language Select Page" library="login_ui_component">
+<kw name="Wait Until Screen Contain" library="SikuliLibrary">
+<arg>language_select_screen.png</arg>
+<arg>10</arg>
+<doc>Wait until screen contain
+ Wait until image shown in screen</doc>
+<msg timestamp="20220518 23:23:57.317" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1652896437157.png'/&gt;</msg>
+<status status="PASS" starttime="20220518 23:23:55.529" endtime="20220518 23:23:57.317"/>
+</kw>
+<kw name="Screen Should Contain" library="SikuliLibrary">
+<arg>language_select_screen.png</arg>
+<doc>Screen should contain</doc>
+<msg timestamp="20220518 23:23:58.139" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1652896437959.png'/&gt;</msg>
+<status status="PASS" starttime="20220518 23:23:57.317" endtime="20220518 23:23:58.139"/>
+</kw>
+<kw name="Get Current Screen Id" library="SikuliLibrary">
+<var>${Id}</var>
+<doc>Get current screen id</doc>
+<msg timestamp="20220518 23:23:58.155" level="INFO">${Id} = 0</msg>
+<status status="PASS" starttime="20220518 23:23:58.140" endtime="20220518 23:23:58.155"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${screenId}</var>
+<arg>${Id}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20220518 23:23:58.157" level="INFO">${screenId} = 0</msg>
+<status status="PASS" starttime="20220518 23:23:58.156" endtime="20220518 23:23:58.157"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${screenId}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220518 23:23:58.159" level="INFO">0</msg>
+<status status="PASS" starttime="20220518 23:23:58.158" endtime="20220518 23:23:58.159"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<var>${result}</var>
+<arg>${screenId}</arg>
+<arg>0</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<msg timestamp="20220518 23:23:58.162" level="INFO">${result} = None</msg>
+<status status="PASS" starttime="20220518 23:23:58.160" endtime="20220518 23:23:58.162"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${result}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220518 23:23:58.164" level="INFO">None</msg>
+<status status="PASS" starttime="20220518 23:23:58.163" endtime="20220518 23:23:58.165"/>
+</kw>
+<status status="PASS" starttime="20220518 23:23:55.528" endtime="20220518 23:23:58.165"/>
+</kw>
+<kw name="Scroll to continue" library="key_login">
+<for flavor="IN RANGE">
+<var>${counter}</var>
+<value>0</value>
+<value>5</value>
+<iter>
+<var name="${counter}">0</var>
+<kw name="Swipe" library="AppiumLibrary">
+<arg>0</arg>
+<arg>495</arg>
+<arg>0</arg>
+<arg>100</arg>
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<status status="PASS" starttime="20220518 23:23:58.167" endtime="20220518 23:23:59.472"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${counter}</var>
+<arg>${counter}+1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220518 23:23:59.473" level="INFO">${counter} = 0+1</msg>
+<status status="PASS" starttime="20220518 23:23:59.473" endtime="20220518 23:23:59.473"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>${counter}==5</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20220518 23:23:59.474" endtime="20220518 23:23:59.476"/>
+</kw>
+<status status="PASS" starttime="20220518 23:23:58.166" endtime="20220518 23:23:59.476"/>
+</iter>
+<iter>
+<var name="${counter}">1</var>
+<kw name="Swipe" library="AppiumLibrary">
+<arg>0</arg>
+<arg>495</arg>
+<arg>0</arg>
+<arg>100</arg>
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<status status="PASS" starttime="20220518 23:23:59.476" endtime="20220518 23:24:00.753"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${counter}</var>
+<arg>${counter}+1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220518 23:24:00.755" level="INFO">${counter} = 1+1</msg>
+<status status="PASS" starttime="20220518 23:24:00.753" endtime="20220518 23:24:00.755"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>${counter}==5</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20220518 23:24:00.755" endtime="20220518 23:24:00.756"/>
+</kw>
+<status status="PASS" starttime="20220518 23:23:59.476" endtime="20220518 23:24:00.756"/>
+</iter>
+<iter>
+<var name="${counter}">2</var>
+<kw name="Swipe" library="AppiumLibrary">
+<arg>0</arg>
+<arg>495</arg>
+<arg>0</arg>
+<arg>100</arg>
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<status status="PASS" starttime="20220518 23:24:00.757" endtime="20220518 23:24:02.041"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${counter}</var>
+<arg>${counter}+1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220518 23:24:02.044" level="INFO">${counter} = 2+1</msg>
+<status status="PASS" starttime="20220518 23:24:02.043" endtime="20220518 23:24:02.044"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>${counter}==5</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20220518 23:24:02.044" endtime="20220518 23:24:02.045"/>
+</kw>
+<status status="PASS" starttime="20220518 23:24:00.757" endtime="20220518 23:24:02.045"/>
+</iter>
+<iter>
+<var name="${counter}">3</var>
+<kw name="Swipe" library="AppiumLibrary">
+<arg>0</arg>
+<arg>495</arg>
+<arg>0</arg>
+<arg>100</arg>
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<status status="PASS" starttime="20220518 23:24:02.045" endtime="20220518 23:24:03.345"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${counter}</var>
+<arg>${counter}+1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220518 23:24:03.346" level="INFO">${counter} = 3+1</msg>
+<status status="PASS" starttime="20220518 23:24:03.345" endtime="20220518 23:24:03.346"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>${counter}==5</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20220518 23:24:03.346" endtime="20220518 23:24:03.347"/>
+</kw>
+<status status="PASS" starttime="20220518 23:24:02.045" endtime="20220518 23:24:03.347"/>
+</iter>
+<iter>
+<var name="${counter}">4</var>
+<kw name="Swipe" library="AppiumLibrary">
+<arg>0</arg>
+<arg>495</arg>
+<arg>0</arg>
+<arg>100</arg>
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<status status="PASS" starttime="20220518 23:24:03.348" endtime="20220518 23:24:04.644"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${counter}</var>
+<arg>${counter}+1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220518 23:24:04.645" level="INFO">${counter} = 4+1</msg>
+<status status="PASS" starttime="20220518 23:24:04.644" endtime="20220518 23:24:04.645"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>${counter}==5</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<msg timestamp="20220518 23:24:04.646" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20220518 23:24:04.646" endtime="20220518 23:24:04.648"/>
+</kw>
+<status status="PASS" starttime="20220518 23:24:03.347" endtime="20220518 23:24:04.648"/>
+</iter>
+<status status="PASS" starttime="20220518 23:23:58.166" endtime="20220518 23:24:04.648"/>
+</for>
+<status status="PASS" starttime="20220518 23:23:58.165" endtime="20220518 23:24:04.648"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${select}</arg>
+<arg>30s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20220518 23:24:04.649" endtime="20220518 23:24:05.405"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${select}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220518 23:24:05.411" level="INFO">Clicking element '//android.widget.Button[@text="continue"]'.</msg>
+<status status="PASS" starttime="20220518 23:24:05.405" endtime="20220518 23:24:06.067"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${languageConfirm}</arg>
+<arg>10s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20220518 23:24:06.067" endtime="20220518 23:24:07.146"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${languageConfirm}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220518 23:24:07.155" level="INFO">Clicking element '//android.widget.Button[@text="confirm"]'.</msg>
+<status status="PASS" starttime="20220518 23:24:07.147" endtime="20220518 23:24:07.315"/>
+</kw>
+<status status="PASS" starttime="20220518 23:23:13.485" endtime="20220518 23:24:07.315"/>
+</kw>
+<kw name="To Start Unknown Visit" library="key_login">
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${startUnknownVisit}</arg>
+<arg>10s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20220518 23:24:07.318" endtime="20220518 23:24:18.118"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${startUnknownVisit}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220518 23:24:18.127" level="INFO">Clicking element '//android.widget.Button[@text="start unknown visit"]'.</msg>
+<status status="PASS" starttime="20220518 23:24:18.118" endtime="20220518 23:24:18.325"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${firstName}</arg>
+<arg>10s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20220518 23:24:18.325" endtime="20220518 23:24:19.397"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${firstName}</arg>
+<arg>jerry</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220518 23:24:19.403" level="INFO">Typing text 'jerry' into text field '//android.widget.EditText[@resource-id="inputFirstName"]'</msg>
+<status status="PASS" starttime="20220518 23:24:19.397" endtime="20220518 23:24:19.604"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${lastName}</arg>
+<arg>sole</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220518 23:24:19.611" level="INFO">Typing text 'sole' into text field '//android.widget.EditText[@resource-id="inputLastName"]'</msg>
+<status status="PASS" starttime="20220518 23:24:19.604" endtime="20220518 23:24:20.299"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${medicaidId}</arg>
+<arg>123456</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220518 23:24:20.307" level="INFO">Typing text '123456' into text field '//android.widget.EditText[@resource-id="inputMedId"]'</msg>
+<status status="PASS" starttime="20220518 23:24:20.300" endtime="20220518 23:24:21.089"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${startVisit}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220518 23:24:21.097" level="INFO">Clicking element '//android.widget.Button[@text="start visit"]'.</msg>
+<status status="PASS" starttime="20220518 23:24:21.090" endtime="20220518 23:24:21.771"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${personlCareDay}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20220518 23:24:21.771" endtime="20220518 23:24:24.229"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${personlCareDay}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220518 23:24:24.239" level="INFO">Clicking element '//android.widget.RadioButton[@text="3.2 Personal Care Day"]'.</msg>
+<status status="PASS" starttime="20220518 23:24:24.230" endtime="20220518 23:24:24.895"/>
+</kw>
+<kw name="Scroll to StartVisit" library="key_login">
+<for flavor="IN RANGE">
+<var>${counter}</var>
+<value>0</value>
+<value>13</value>
+<iter>
+<var name="${counter}">0</var>
+<kw name="Swipe" library="AppiumLibrary">
+<arg>0</arg>
+<arg>600</arg>
+<arg>0</arg>
+<arg>100</arg>
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<status status="PASS" starttime="20220518 23:24:24.897" endtime="20220518 23:24:26.148"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${counter}</var>
+<arg>${counter}+1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220518 23:24:26.151" level="INFO">${counter} = 0+1</msg>
+<status status="PASS" starttime="20220518 23:24:26.148" endtime="20220518 23:24:26.152"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>${counter}==13</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20220518 23:24:26.152" endtime="20220518 23:24:26.154"/>
+</kw>
+<status status="PASS" starttime="20220518 23:24:24.897" endtime="20220518 23:24:26.154"/>
+</iter>
+<iter>
+<var name="${counter}">1</var>
+<kw name="Swipe" library="AppiumLibrary">
+<arg>0</arg>
+<arg>600</arg>
+<arg>0</arg>
+<arg>100</arg>
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<status status="PASS" starttime="20220518 23:24:26.154" endtime="20220518 23:24:27.406"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${counter}</var>
+<arg>${counter}+1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220518 23:24:27.407" level="INFO">${counter} = 1+1</msg>
+<status status="PASS" starttime="20220518 23:24:27.406" endtime="20220518 23:24:27.407"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>${counter}==13</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20220518 23:24:27.408" endtime="20220518 23:24:27.409"/>
+</kw>
+<status status="PASS" starttime="20220518 23:24:26.154" endtime="20220518 23:24:27.409"/>
+</iter>
+<iter>
+<var name="${counter}">2</var>
+<kw name="Swipe" library="AppiumLibrary">
+<arg>0</arg>
+<arg>600</arg>
+<arg>0</arg>
+<arg>100</arg>
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<status status="PASS" starttime="20220518 23:24:27.410" endtime="20220518 23:24:28.683"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${counter}</var>
+<arg>${counter}+1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220518 23:24:28.684" level="INFO">${counter} = 2+1</msg>
+<status status="PASS" starttime="20220518 23:24:28.684" endtime="20220518 23:24:28.684"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>${counter}==13</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20220518 23:24:28.685" endtime="20220518 23:24:28.686"/>
+</kw>
+<status status="PASS" starttime="20220518 23:24:27.409" endtime="20220518 23:24:28.686"/>
+</iter>
+<iter>
+<var name="${counter}">3</var>
+<kw name="Swipe" library="AppiumLibrary">
+<arg>0</arg>
+<arg>600</arg>
+<arg>0</arg>
+<arg>100</arg>
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<status status="PASS" starttime="20220518 23:24:28.686" endtime="20220518 23:24:29.968"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${counter}</var>
+<arg>${counter}+1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220518 23:24:29.969" level="INFO">${counter} = 3+1</msg>
+<status status="PASS" starttime="20220518 23:24:29.968" endtime="20220518 23:24:29.969"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>${counter}==13</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20220518 23:24:29.970" endtime="20220518 23:24:29.970"/>
+</kw>
+<status status="PASS" starttime="20220518 23:24:28.686" endtime="20220518 23:24:29.970"/>
+</iter>
+<iter>
+<var name="${counter}">4</var>
+<kw name="Swipe" library="AppiumLibrary">
+<arg>0</arg>
+<arg>600</arg>
+<arg>0</arg>
+<arg>100</arg>
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<status status="PASS" starttime="20220518 23:24:29.971" endtime="20220518 23:24:31.249"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${counter}</var>
+<arg>${counter}+1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220518 23:24:31.250" level="INFO">${counter} = 4+1</msg>
+<status status="PASS" starttime="20220518 23:24:31.250" endtime="20220518 23:24:31.250"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>${counter}==13</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20220518 23:24:31.251" endtime="20220518 23:24:31.252"/>
+</kw>
+<status status="PASS" starttime="20220518 23:24:29.971" endtime="20220518 23:24:31.253"/>
+</iter>
+<iter>
+<var name="${counter}">5</var>
+<kw name="Swipe" library="AppiumLibrary">
+<arg>0</arg>
+<arg>600</arg>
+<arg>0</arg>
+<arg>100</arg>
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<status status="PASS" starttime="20220518 23:24:31.253" endtime="20220518 23:24:32.551"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${counter}</var>
+<arg>${counter}+1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220518 23:24:32.553" level="INFO">${counter} = 5+1</msg>
+<status status="PASS" starttime="20220518 23:24:32.552" endtime="20220518 23:24:32.553"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>${counter}==13</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20220518 23:24:32.554" endtime="20220518 23:24:32.555"/>
+</kw>
+<status status="PASS" starttime="20220518 23:24:31.253" endtime="20220518 23:24:32.556"/>
+</iter>
+<iter>
+<var name="${counter}">6</var>
+<kw name="Swipe" library="AppiumLibrary">
+<arg>0</arg>
+<arg>600</arg>
+<arg>0</arg>
+<arg>100</arg>
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<status status="PASS" starttime="20220518 23:24:32.556" endtime="20220518 23:24:33.835"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${counter}</var>
+<arg>${counter}+1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220518 23:24:33.836" level="INFO">${counter} = 6+1</msg>
+<status status="PASS" starttime="20220518 23:24:33.835" endtime="20220518 23:24:33.836"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>${counter}==13</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20220518 23:24:33.837" endtime="20220518 23:24:33.838"/>
+</kw>
+<status status="PASS" starttime="20220518 23:24:32.556" endtime="20220518 23:24:33.838"/>
+</iter>
+<iter>
+<var name="${counter}">7</var>
+<kw name="Swipe" library="AppiumLibrary">
+<arg>0</arg>
+<arg>600</arg>
+<arg>0</arg>
+<arg>100</arg>
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<status status="PASS" starttime="20220518 23:24:33.839" endtime="20220518 23:24:35.120"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${counter}</var>
+<arg>${counter}+1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220518 23:24:35.121" level="INFO">${counter} = 7+1</msg>
+<status status="PASS" starttime="20220518 23:24:35.120" endtime="20220518 23:24:35.121"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>${counter}==13</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20220518 23:24:35.123" endtime="20220518 23:24:35.124"/>
+</kw>
+<status status="PASS" starttime="20220518 23:24:33.838" endtime="20220518 23:24:35.124"/>
+</iter>
+<iter>
+<var name="${counter}">8</var>
+<kw name="Swipe" library="AppiumLibrary">
+<arg>0</arg>
+<arg>600</arg>
+<arg>0</arg>
+<arg>100</arg>
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<status status="PASS" starttime="20220518 23:24:35.124" endtime="20220518 23:24:36.404"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${counter}</var>
+<arg>${counter}+1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220518 23:24:36.405" level="INFO">${counter} = 8+1</msg>
+<status status="PASS" starttime="20220518 23:24:36.404" endtime="20220518 23:24:36.405"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>${counter}==13</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20220518 23:24:36.406" endtime="20220518 23:24:36.407"/>
+</kw>
+<status status="PASS" starttime="20220518 23:24:35.124" endtime="20220518 23:24:36.407"/>
+</iter>
+<iter>
+<var name="${counter}">9</var>
+<kw name="Swipe" library="AppiumLibrary">
+<arg>0</arg>
+<arg>600</arg>
+<arg>0</arg>
+<arg>100</arg>
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<status status="PASS" starttime="20220518 23:24:36.407" endtime="20220518 23:24:37.683"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${counter}</var>
+<arg>${counter}+1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220518 23:24:37.685" level="INFO">${counter} = 9+1</msg>
+<status status="PASS" starttime="20220518 23:24:37.684" endtime="20220518 23:24:37.685"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>${counter}==13</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20220518 23:24:37.685" endtime="20220518 23:24:37.686"/>
+</kw>
+<status status="PASS" starttime="20220518 23:24:36.407" endtime="20220518 23:24:37.686"/>
+</iter>
+<iter>
+<var name="${counter}">10</var>
+<kw name="Swipe" library="AppiumLibrary">
+<arg>0</arg>
+<arg>600</arg>
+<arg>0</arg>
+<arg>100</arg>
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<status status="PASS" starttime="20220518 23:24:37.687" endtime="20220518 23:24:38.964"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${counter}</var>
+<arg>${counter}+1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220518 23:24:38.966" level="INFO">${counter} = 10+1</msg>
+<status status="PASS" starttime="20220518 23:24:38.965" endtime="20220518 23:24:38.966"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>${counter}==13</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20220518 23:24:38.966" endtime="20220518 23:24:38.967"/>
+</kw>
+<status status="PASS" starttime="20220518 23:24:37.686" endtime="20220518 23:24:38.968"/>
+</iter>
+<iter>
+<var name="${counter}">11</var>
+<kw name="Swipe" library="AppiumLibrary">
+<arg>0</arg>
+<arg>600</arg>
+<arg>0</arg>
+<arg>100</arg>
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<status status="PASS" starttime="20220518 23:24:38.968" endtime="20220518 23:24:40.238"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${counter}</var>
+<arg>${counter}+1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220518 23:24:40.240" level="INFO">${counter} = 11+1</msg>
+<status status="PASS" starttime="20220518 23:24:40.239" endtime="20220518 23:24:40.240"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>${counter}==13</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20220518 23:24:40.240" endtime="20220518 23:24:40.241"/>
+</kw>
+<status status="PASS" starttime="20220518 23:24:38.968" endtime="20220518 23:24:40.241"/>
+</iter>
+<iter>
+<var name="${counter}">12</var>
+<kw name="Swipe" library="AppiumLibrary">
+<arg>0</arg>
+<arg>600</arg>
+<arg>0</arg>
+<arg>100</arg>
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<status status="PASS" starttime="20220518 23:24:40.242" endtime="20220518 23:24:41.520"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${counter}</var>
+<arg>${counter}+1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220518 23:24:41.522" level="INFO">${counter} = 12+1</msg>
+<status status="PASS" starttime="20220518 23:24:41.521" endtime="20220518 23:24:41.522"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>${counter}==13</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<msg timestamp="20220518 23:24:41.523" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20220518 23:24:41.522" endtime="20220518 23:24:41.525"/>
+</kw>
+<status status="PASS" starttime="20220518 23:24:40.242" endtime="20220518 23:24:41.525"/>
+</iter>
+<status status="PASS" starttime="20220518 23:24:24.896" endtime="20220518 23:24:41.525"/>
+</for>
+<status status="PASS" starttime="20220518 23:24:24.896" endtime="20220518 23:24:41.526"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${startVisit}</arg>
+<arg>30s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20220518 23:24:41.526" endtime="20220518 23:24:42.025"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${startVisit}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220518 23:24:42.031" level="INFO">Clicking element '//android.widget.Button[@text="start visit"]'.</msg>
+<status status="PASS" starttime="20220518 23:24:42.025" endtime="20220518 23:24:42.484"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220518 23:24:47.489" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220518 23:24:42.485" endtime="20220518 23:24:47.489"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${home}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20220518 23:24:47.490" endtime="20220518 23:24:47.734"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${home}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220518 23:24:47.741" level="INFO">Clicking element '//android.widget.RadioButton[@text="Home"]'.</msg>
+<status status="PASS" starttime="20220518 23:24:47.734" endtime="20220518 23:24:48.051"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${continue}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220518 23:24:48.064" level="INFO">Clicking element '//android.widget.Button[@text="continue"]'.</msg>
+<status status="PASS" starttime="20220518 23:24:48.051" endtime="20220518 23:24:49.366"/>
+</kw>
+<kw name="Wait Until Screen Contain" library="SikuliLibrary">
+<arg>yes_click.png</arg>
+<arg>30</arg>
+<doc>Wait until screen contain
+ Wait until image shown in screen</doc>
+<msg timestamp="20220518 23:24:50.305" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1652896490283.png'/&gt;</msg>
+<status status="PASS" starttime="20220518 23:24:49.366" endtime="20220518 23:24:50.305"/>
+</kw>
+<kw name="Click" library="SikuliLibrary">
+<arg>yes_click.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220518 23:24:52.550" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1652896491333.png'/&gt;
+[log] CLICK on L[1745,724]@S(0) (543 msec)</msg>
+<status status="PASS" starttime="20220518 23:24:50.305" endtime="20220518 23:24:52.551"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220518 23:24:55.560" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220518 23:24:52.551" endtime="20220518 23:24:55.561"/>
+</kw>
+<status status="PASS" starttime="20220518 23:24:07.317" endtime="20220518 23:24:55.563"/>
+</kw>
+<kw name="To Validate Confirm My Visit" library="key_login">
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${menu}</arg>
+<arg>20s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20220518 23:24:55.566" endtime="20220518 23:24:56.660"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${menu}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220518 23:24:56.668" level="INFO">Clicking element '//android.widget.Button[@text="Menu"]'.</msg>
+<status status="PASS" starttime="20220518 23:24:56.661" endtime="20220518 23:24:57.475"/>
+</kw>
+<kw name="Wait Until Screen Contain" library="SikuliLibrary">
+<arg>my_visit.png</arg>
+<arg>20</arg>
+<doc>Wait until screen contain
+ Wait until image shown in screen</doc>
+<msg timestamp="20220518 23:24:59.101" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1652896499088.png'/&gt;</msg>
+<status status="PASS" starttime="20220518 23:24:57.475" endtime="20220518 23:24:59.102"/>
+</kw>
+<kw name="Click" library="SikuliLibrary">
+<arg>my_visit.png</arg>
+<doc>Click</doc>
+<msg timestamp="20220518 23:25:01.132" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1652896499871.png'/&gt;
+[log] CLICK on L[1480,185]@S(0) (530 msec)</msg>
+<status status="PASS" starttime="20220518 23:24:59.103" endtime="20220518 23:25:01.132"/>
+</kw>
+<kw name="Wait Until Screen Contain" library="SikuliLibrary">
+<arg>my_visit_home_page.png</arg>
+<arg>20</arg>
+<doc>Wait until screen contain
+ Wait until image shown in screen</doc>
+<msg timestamp="20220518 23:25:02.659" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1652896502563.png'/&gt;</msg>
+<status status="PASS" starttime="20220518 23:25:01.133" endtime="20220518 23:25:02.660"/>
+</kw>
+<status status="PASS" starttime="20220518 23:24:55.565" endtime="20220518 23:25:02.660"/>
+</kw>
+<status status="PASS" starttime="20220518 23:23:13.482" endtime="20220518 23:25:02.661"/>
+</test>
+<doc>Sandata Login</doc>
+<status status="PASS" starttime="20220518 23:23:05.183" endtime="20220518 23:25:02.663"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Login Sandata">Login Sandata</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
